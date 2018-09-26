@@ -1,0 +1,44 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Meu Filme</title>
+    <link rel="stylesheet" href= "{% static 'style.css'%}">
+</head>
+<body>
+    <a href="{% url 'logout' %}">sair</a>
+    <center>
+    <h1 class="home"> Bem Vindo!! E nos revele os seus...</h1>
+    <h2> Filmes Favoritos</h2>
+
+    <img class = "img" src="{% static "filme.jpg" %}" alt="Minha imagem"/>
+
+    <p>Hoje é dia {{now}} </p>
+    </center>
+
+    <div>
+        {% for generoc in generoc %}
+        <li><a href="{% url 'nova_comedia' %}">{{ generoc }}</a></li>
+        {% endfor %}
+    </div>
+
+     <div>
+        {% for generoa in generoa %}
+         <li><a href="{% url 'nova_animacao' %}">{{ generoa }}</a></li>
+        {% endfor %}
+    </div>
+    <div>
+        {% for generot in generot %}
+        <li><a href="{% url 'nova_terror' %}">{{ generot }}</a></li>
+        {% endfor %}
+    </div>
+
+    <br>
+        <a href="{% url 'list_filmes' %}">Lista dos seus filmes</a>
+
+</body>
+</html>

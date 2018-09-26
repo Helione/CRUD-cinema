@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Deletar Filme Comédia</title>
+    <title>Deletar Filme </title>
 </head>
 <body>
   <center>
-        <h1>Tem certeza que deseja Deletar {{filme.filme}}</h1>
+        <h1>Tem certeza que deseja Deletar {{filme.filme}}?</h1>
         <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
             <button type="submit">Deletar</button>

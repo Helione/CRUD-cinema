@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>formulário</title>
+</head>
+<body>
+    <center>
+        <h1>Filmes de Comédias</h1>
+        <form action="{% url 'nova_comedia' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+            <img {{ Comedia.imagem.url }}>
+        <button type="submit">Salvar</button>
+        </form>
+    </center>
+</body>
+</html>
