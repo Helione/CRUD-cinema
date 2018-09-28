@@ -38,7 +38,7 @@ def nova_animacao(request):
 
     if form.is_valid():
         form.save()
-        return redirect('list_filmes')
+        return redirect('list_filmes_animacao')
     return render(request, 'animacaoform.html',{'form':form})
 
 @login_required
@@ -47,7 +47,7 @@ def nova_terror(request):
 
     if form.is_valid():
         form.save()
-        return redirect('list_filmes')
+        return redirect('list_filmes_terror')
     return render(request, 'terrorform.html',{'form':form})
 
 @login_required
@@ -56,7 +56,7 @@ def nova_comedia(request):
 
     if form.is_valid():
         form.save()
-        return redirect('list_filmes')
+        return redirect('list_filmes_comedia')
     return render(request, 'comediaform.html',{'form':form})
 
 @login_required
@@ -66,7 +66,7 @@ def atualizar_comedia(request, id):
 
     if form.is_valid():
         form.save()
-        return redirect('list_filmes')
+        return redirect('list_filmes_comedia')
 
     return render(request, 'comediaform.html',{'form': form})
 
@@ -77,7 +77,7 @@ def atualizar_animacao(request, id):
 
     if form.is_valid():
         form.save()
-        return redirect('list_filmes')
+        return redirect('list_filmes_animacao')
 
     return render(request, 'animacaoform.html',{'form': form})
 
@@ -88,7 +88,7 @@ def atualizar_terror(request, id):
 
     if form.is_valid():
         form.save()
-        return redirect('list_filmes')
+        return redirect('list_filmes_terror')
 
     return render(request, 'terrorform.html',{'form': form})
 
@@ -99,7 +99,7 @@ def deletar_comedia(request,id):
 
     if request.method =='POST':
         filme.delete()
-        return redirect('list_filmes')
+        return redirect('list_filmes_comedia')
     return render(request, 'deletar_form.html', {'filme':filme})
 
 @login_required
@@ -109,7 +109,7 @@ def deletar_animacao(request,id):
 
     if request.method =='POST':
         filme.delete()
-        return redirect('list_filmes')
+        return redirect('list_filmes_animacao')
     return render(request, 'deletar_form.html', {'filme':filme})
 
 @login_required
@@ -119,5 +119,5 @@ def deletar_terror(request,id):
 
     if request.method =='POST':
         filme.delete()
-        return redirect('list_filmes')
+        return redirect('list_filmes_terror')
     return render(request, 'deletar_form.html', {'filme':filme})
