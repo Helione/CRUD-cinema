@@ -8,14 +8,19 @@
     <title>Listagem dos Filmes Comédia</title>
 </head>
 <body>
-  <a href="{% url 'logout' %}">sair</a>
-
+    <ul>
+        <li>
+            <a href="{% url 'filmes'%}">página inicial</a>
+            <a href="{% url 'logout' %}">sair</a>
+        </li>
+    </ul>
   <br><br>
 
     <h4>Filmes Comédia</h4>
     <ul>
         {% for Comedia in filmes%}
-        <li><a href="{% url 'atualizar_comedia' Comedia.id%}">{{ Comedia.filme }}</a>
+        <li>
+            <a href="{% url 'atualizar_comedia' Comedia.id%}">{{ Comedia.filme }}</a>
             <a href="{% url 'deletar_comedia' Comedia.id%}">Deletar</a>
         </li>
 
