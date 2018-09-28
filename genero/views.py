@@ -6,9 +6,19 @@ from .form import animacaoform,terrorform,comediaform
 
 
 @login_required
-def list_filmes(request):
-    filmes= Comedia.objects.all()
-    return render(request, 'listfilme.html', {'filmes': filmes})
+def list_filmes_comedia(request):
+    filmesc= Comedia.objects.all()
+    return render(request, 'listfilme.html', {'filmesc': filmesc})
+
+@login_required
+def list_filmes_animacao(request):
+    filmesa= Animacao.objects.all()
+    return render(request, 'listfilme.html', {'filmesa': filmesa})
+
+@ login_required
+def list_filmes_terror(request):
+    filmest = Terror.objects.all()
+    return render(request, 'listfilme.html', {'filmest': filmest})
 
 @login_required
 def filmes(request):

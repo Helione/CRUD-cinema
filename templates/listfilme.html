@@ -12,11 +12,10 @@
             <a href="{% url 'filmes'%}">página inicial</a>
             <a href="{% url 'logout' %}">sair</a>
     </ul>
-  <br><br>
-
+  <br>
     <h4>Filmes Comédia</h4>
     <ul>
-        {% for Comedia in filmes%}
+        {% for Comedia in filmesc%}
         <li>
             <a href="{% url 'atualizar_comedia' Comedia.id%}">{{ Comedia.filme }}</a>
             <a href="{% url 'deletar_comedia' Comedia.id%}">Deletar</a>
@@ -28,6 +27,34 @@
     <br><br>
         <a href="{% url 'nova_comedia' %}">Nova Comédia</a>
 
+  <br>
+    <h4>Filmes Animação</h4>
+    <ul>
+        {% for Animacao in filmesa%}
+        <li>
+            <a href="{% url 'atualizar_comedia' Animacao.id%}">{{ Animacao.filme }}</a>
+            <a href="{% url 'deletar_comedia' Animacao.id%}">Deletar</a>
+        </li>
 
+        {% endfor %}
+    </ul>
+
+    <br><br>
+        <a href="{% url 'nova_animacao' %}">Nova Animacao</a>
+
+  <br>
+    <h4>Filmes Terror</h4>
+    <ul>
+        {% for Terror in filmesrt%}
+        <li>
+            <a href="{% url 'atualizar_terror' Terror.id%}">{{ Terror.filme }}</a>
+            <a href="{% url 'deletar_terror' Terror.id%}">Deletar</a>
+        </li>
+
+        {% endfor %}
+    </ul>
+
+    <br><br>
+        <a href="{% url 'nova_Terror' %}">Novo Terror</a>
 </body>
 </html>
