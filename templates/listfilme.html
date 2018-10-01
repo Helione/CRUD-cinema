@@ -17,7 +17,7 @@
     <ul>
         {% for Comedia in filmesc%}
         <li>
-            <a href="{% url 'atualizar_comedia' Comedia.id%}">{{ Comedia.filme }}</a>
+            <a href="{% url 'atualizar_comedia' Comedia.id%}">{{ filmesc }}</a>
             <a href="{% url 'deletar_comedia' Comedia.id%}">Deletar</a>
         </li>
 
@@ -32,7 +32,7 @@
     <ul>
         {% for Animacao in filmesa%}
         <li>
-            <a href="{% url 'atualizar_comedia' Animacao.id%}">{{ Animacao.filme }}</a>
+            <a href="{% url 'atualizar_comedia' Animacao.id%}">{{ filmesa }}</a>
             <a href="{% url 'deletar_comedia' Animacao.id%}">Deletar</a>
         </li>
 
@@ -47,7 +47,7 @@
     <ul>
         {% for Terror in filmest%}
         <li>
-            <a href="{% url 'atualizar_terror' Terror.id%}">{{ Terror.filme }}</a>
+            <a href="{% url 'atualizar_terror' Terror.id%}">{{ filmest }}</a>
             <a href="{% url 'deletar_terror' Terror.id%}">Deletar</a>
         </li>
 
