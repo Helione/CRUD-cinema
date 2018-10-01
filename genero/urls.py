@@ -4,7 +4,7 @@ from .views import filmes,nova_comedia,nova_animacao,nova_terror
 from .views import atualizar_comedia, deletar_comedia,atualizar_animacao, deletar_animacao,atualizar_terror, deletar_terror
 
 urlpatterns = [
-    path('filmes/', filmes, name='filmes'),
+    path('olhefilmes/', filmes, name='filmes'),
     path('listfilme/', list_filmes_comedia, name='list_filmes_comedia'),
     path('listfilme/', list_filmes_animacao, name='list_filmes_animacao'),
     path('listfilme/', list_filmes_terror, name='list_filmes_terror'),

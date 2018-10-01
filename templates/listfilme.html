@@ -45,7 +45,7 @@
   <br>
     <h4>Filmes Terror</h4>
     <ul>
-        {% for Terror in filmesrt%}
+        {% for Terror in filmest%}
         <li>
             <a href="{% url 'atualizar_terror' Terror.id%}">{{ Terror.filme }}</a>
             <a href="{% url 'deletar_terror' Terror.id%}">Deletar</a>
