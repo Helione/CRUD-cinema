@@ -18,8 +18,8 @@
     <ul>
         {% for Animacao in filmesa%}
         <li>
-            <a href="{% url 'atualizar_comedia' Animacao.id%}">{{ Animacao.filme }}</a>
-            <a href="{% url 'deletar_comedia' Animacao.id%}">Deletar</a>
+            <a href="{% url 'atualizar_animacao' Animacao.id%}">{{ Animacao.filme }}</a>
+            <a href="{% url 'deletar_animacao' Animacao.id%}">Deletar</a>
         </li>
 
         {% endfor %}

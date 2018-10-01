@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Comedia, Animacao, Terror
+from .models import Animacao,Terror,Comedia
 
 
 class animacaoform(ModelForm):

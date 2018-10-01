@@ -5,9 +5,9 @@ from .views import atualizar_comedia, deletar_comedia,atualizar_animacao, deleta
 
 urlpatterns = [
     path('', filmes, name='filmes'),
-    path('listfilme/', list_filmes_comedia, name='list_filmes_comedia'),
-    path('listfilme/', list_filmes_animacao, name='list_filmes_animacao'),
-    path('listfilme/', list_filmes_terror, name='list_filmes_terror'),
+    path('listfilmecomedia/', list_filmes_comedia, name='list_filmes_comedia'),
+    path('listfilmeanimacao/', list_filmes_animacao, name='list_filmes_animacao'),
+    path('listfilmeterror/', list_filmes_terror, name='list_filmes_terror'),
     path('comedia/', nova_comedia, name='nova_comedia'),
     path('animacao/', nova_animacao, name='nova_animacao'),
     path('terror/', nova_terror, name='nova_terror'),
