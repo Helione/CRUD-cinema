@@ -1,7 +1,8 @@
 from django.urls import path
 from .views import list_filmes_comedia, list_filmes_animacao, list_filmes_terror
 from .views import filmes,nova_comedia,nova_animacao,nova_terror
-from .views import atualizar_comedia, deletar_comedia,atualizar_animacao, deletar_animacao,atualizar_terror, deletar_terror
+from .views import atualizar_comedia, atualizar_animacao, atualizar_terror
+from .views import deletar_comedia,deletar_animacao, deletar_terror
 
 urlpatterns = [
     path('', filmes, name='filmes'),
@@ -11,10 +12,10 @@ urlpatterns = [
     path('comedia/', nova_comedia, name='nova_comedia'),
     path('animacao/', nova_animacao, name='nova_animacao'),
     path('terror/', nova_terror, name='nova_terror'),
-    path('atualizar/<int:id>/', atualizar_comedia, name='atualizar_comedia'),
-    path('deletar/<int:id>/', deletar_comedia, name='deletar_comedia'),
-    path('atualizar/<int:id>/', atualizar_animacao, name='atualizar_animacao'),
-    path('deletar/<int:id>/', deletar_animacao, name='deletar_animacao'),
-    path('atualizar/<int:id>/', atualizar_terror, name='atualizar_terror'),
-    path('deletar/<int:id>/', deletar_terror, name='deletar_terror'),
+    path('atualizarcomedia/<int:id>/', atualizar_comedia, name='atualizar_comedia'),
+    path('deletarcomedia/<int:id>/', deletar_comedia, name='deletar_comedia'),
+    path('atualizaranimacao/<int:id>/', atualizar_animacao, name='atualizar_animacao'),
+    path('deletaranimacao/<int:id>/', deletar_animacao, name='deletar_animacao'),
+    path('atualizarterror/<int:id>/', atualizar_terror, name='atualizar_terror'),
+    path('deletarterror/<int:id>/', deletar_terror, name='deletar_terror'),
 ]

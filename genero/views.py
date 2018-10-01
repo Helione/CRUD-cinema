@@ -49,7 +49,7 @@ def deletar_comedia(request,id):
     if request.method =='POST':
         filme.delete()
         return redirect('list_filmes_comedia')
-    return render(request, 'deletar_form.html', {'filme':filme})
+    return render(request, 'deletar_form_comedia.html', {'filme':filme})
 
 @login_required
 def list_filmes_animacao(request):
@@ -84,7 +84,7 @@ def deletar_animacao(request,id):
     if request.method =='POST':
         filme.delete()
         return redirect('list_filmes_animacao')
-    return render(request, 'deletar_form.html', {'filme':filme})
+    return render(request, 'deletar_form_animacao.html', {'filme':filme})
 
 @ login_required
 def list_filmes_terror(request):
@@ -119,4 +119,4 @@ def deletar_terror(request,id):
     if request.method =='POST':
         filme.delete()
         return redirect('list_filmes_terror')
-    return render(request, 'deletar_form.html', {'filme':filme})
+    return render(request, 'deletar_form_terror.html', {'filme':filme})
