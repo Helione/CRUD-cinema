@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Filmes de Terror{% endblock %}
+
+{% block main %}
+
+    <ul>
+            <a href="{% url 'filmes'%}">página inicial</a>
+            <a href="{% url 'logout' %}"  class="btn btn-danger">sair</a>
+    </ul>
+
+   <br>
+    <h4>Filmes Terror</h4>
+    <ul>
+        {% for Terror in filmest%}
+        <li>
+            <a href="{% url 'atualizar_terror' Terror.id%}">{{ Terror.filme }}</a>
+            <a href="{% url 'deletar_terror' Terror.id%}"class="btn btn-danger">Deletar</a>
+        </li>
+
+        {% endfor %}
+    </ul>
+
+    <br><br>
+        <a href="{% url 'nova_terror' %}">Novo Terror</a>
+
+{% endblock %}

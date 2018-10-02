@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Filmes de Comédia{% endblock %}
+
+{% block main %}
+
+<div class="row">
+    <div class="col">
+        <a href="{% url 'filmes'%}">página inicial</a>
+    </div>
+    <div class="col-6">
+        <h4>Filmes Comédia</h4>
+            <ul class="list-group">
+            {% for Comedia in filmesc%}
+                <li class="list-group-item">
+                    <a href="{% url 'atualizar_comedia' Comedia.id%}">{{ Comedia.filme }}</a>
+                    <a href="{% url 'deletar_comedia' Comedia.id%}" class="btn btn-danger" >Deletar</a>
+                </li>
+        {% endfor %}
+            </ul>
+
+    <br><br>
+        <a href="{% url 'nova_comedia' %}">Nova Comédia</a>
+
+    </div>
+    <div class="coll">
+        <a href="{% url 'logout' %}"  class="btn btn-danger">sair</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load bootstrap%}
+
+{% block title %}Formulário{% endblock %}
+
+{% block main %}
+    <ul>
+            <a href="{% url 'filmes'%}">página inicial</a>
+            <a href="{% url 'logout' %}">sair</a>
+    </ul>
+   <center>
+        <h1>Filmes de Animação</h1>
+        <form action="{% url 'nova_animacao' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form|bootstrap}}
+            <img {{ Animacao.imagem.url }}>
+        <button type="submit">Salvar</button>
+        </form>
+    </center>
+{% endblock %}

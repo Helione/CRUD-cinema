@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block main %}
+
+<div class="row">
+    <div class="col-4">
+         <h2 class="home"> Bem Vindo!!</h2>
+         <h4> Filmes Favoritos</h4>
+
+          <p>Hoje é dia {{now}} </p>
+    </div>
+    <div class="col-6">
+        <div class="list-group">
+        {% for generoc in generoc %}
+            <li class="list-group-item"><a href="{% url 'nova_comedia' %}">{{ generoc }}</a></li>
+        {% endfor %}
+        </div>
+
+         <div class="list-group">
+        {% for generoa in generoa %}
+             <li class="list-group-item"><a href="{% url 'nova_animacao' %}">{{ generoa }}</a></li>
+        {% endfor %}
+        </div>
+
+        <div class="list-group">
+        {% for generot in generot %}
+             <li class="list-group-item"><a href="{% url 'nova_terror' %}">{{ generot }}</a></li>
+        {% endfor %}
+         </div>
+
+        <br>
+        <a href="{% url 'list_filmes_comedia' %}">Lista dos seus filmes de Comédia</a>
+        <br>
+        <a href="{% url 'list_filmes_animacao' %}">Lista dos seus filmes de Animação</a>
+        <br>
+        <a href="{% url 'list_filmes_terror' %}">Lista dos seus filmes de Terror</a>
+
+    </div>
+    <div class="coll-2">
+        <a href="{% url 'logout' %}" class="btn btn-danger">sair</a>
+    </div>
+</div>
+
+{% endblock %}

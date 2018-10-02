@@ -1,0 +1,26 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Lista de filmes Animação{% endblock %}
+
+{% block main %}
+      <ul>
+            <a href="{% url 'filmes'%}">página inicial</a>
+            <a href="{% url 'logout' %}" class="btn btn-danger">sair</a>
+      </ul>
+
+    <br>
+    <h4>Filmes Animação</h4>
+    <ul>
+        {% for Animacao in filmesa%}
+        <li>
+            <a href="{% url 'atualizar_animacao' Animacao.id%}">{{ Animacao.filme }}</a>
+            <a href="{% url 'deletar_animacao' Animacao.id%}" class="btn btn-danger">Deletar</a>
+        </li>
+
+        {% endfor %}
+    </ul>
+
+    <br><br>
+        <a href="{% url 'nova_animacao' %}">Nova Animacao</a>
+{% endblock %}
