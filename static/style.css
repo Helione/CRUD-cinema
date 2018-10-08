@@ -1,9 +1,12 @@
-.home{
-    color: red;
-}
+.home {
+    color: Brown;
 
-.img{
+.img {
     width:50%;
     heigth:50%;
     position: relative;
+}
+
+.trash-item {
+    float: right;
 }

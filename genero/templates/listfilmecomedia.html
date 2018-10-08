@@ -5,26 +5,36 @@
 {% block main %}
 
 <div class="row">
-    <div class="col">
-        <a href="{% url 'filmes'%}">página inicial</a>
+    <div class="col-12">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a href="{% url 'filmes'%}" class="btn btn-info">Página Inicial</a>
+                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="navbar-toggler-icon"></span>
+                 </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav">
+                            <li class="nav-item active">
+                              <a class="nav-link" href="{% url 'nova_comedia' %}">Novo filme de Comédia<span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link disabled" href="{% url 'logout' %}">Sair</a>
+                            </li>
+                     </ul>
+             </div>
+        </nav>
     </div>
-    <div class="col-6">
+    <div class="col-12">
+        </br></br></br>
         <h4>Filmes Comédia</h4>
             <ul class="list-group">
             {% for Comedia in filmesc%}
                 <li class="list-group-item">
                     <a href="{% url 'atualizar_comedia' Comedia.id%}">{{ Comedia.filme }}</a>
-                    <a href="{% url 'deletar_comedia' Comedia.id%}" class="btn btn-danger" >Deletar</a>
+                    <a href="{% url 'deletar_comedia' Comedia.id%}" class="trash-item">
+                        <i class="fa fa-trash" aria-hidden="true"></i></a>
                 </li>
-        {% endfor %}
+            {% endfor %}
             </ul>
-
-    <br><br>
-        <a href="{% url 'nova_comedia' %}">Nova Comédia</a>
-
-    </div>
-    <div class="coll">
-        <a href="{% url 'logout' %}"  class="btn btn-danger">sair</a>
     </div>
 </div>
 {% endblock %}

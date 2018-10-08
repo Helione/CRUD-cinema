@@ -3,15 +3,20 @@
 {% block title %}Home{% endblock %}
 
 {% block main %}
+    <div class="row">
+    <article class="col-12">
+            {% if user.is_authenticated %}
+                <p><a href="{% url 'logout' %}"><span class="badge badge-danger">Sair</span></a></p>
+            {% endif %}
 
-<div class="row">
-    <div class="col-4">
-         <h2 class="home"> Bem Vindo!!</h2>
-         <h4> Filmes Favoritos</h4>
-
-          <p>Hoje é dia {{now}} </p>
-    </div>
-    <div class="col-6">
+            <h2 class="home"> Bem Vindo(a) {{ user.username }} a seus..</h2>
+              <h4> Filmes Favoritos</h4>
+                 <p>Hoje é dia {{now}} </p>
+    </article>
+    <article class="col-12">
+        <div class="list-group">
+             <li class="list-group-item active">Adicione seus Filmes</li>
+        </div>
         <div class="list-group">
         {% for generoc in generoc %}
             <li class="list-group-item"><a href="{% url 'nova_comedia' %}">{{ generoc }}</a></li>
@@ -31,16 +36,23 @@
          </div>
 
         <br>
-        <a href="{% url 'list_filmes_comedia' %}">Lista dos seus filmes de Comédia</a>
-        <br>
-        <a href="{% url 'list_filmes_animacao' %}">Lista dos seus filmes de Animação</a>
-        <br>
-        <a href="{% url 'list_filmes_terror' %}">Lista dos seus filmes de Terror</a>
 
-    </div>
-    <div class="coll-2">
-        <a href="{% url 'logout' %}" class="btn btn-danger">sair</a>
+        <ul class="list-group">
+            <li class="list-group-item active">Lista dos seus Filmes</li>
+            <li class="list-group-item"><a href="{% url 'list_filmes_animacao' %}">Lista dos seus filmes de Animação</a></li>
+            <li class="list-group-item"><a href="{% url 'list_filmes_terror' %}">Lista dos seus filmes de Terror</a></li>
+            <li class="list-group-item"><a href="{% url 'list_filmes_comedia' %}">Lista dos seus filmes de Comédia</a></li>
+        </ul>
+
+    </article>
     </div>
 </div>
 
+{% endblock %}
+{% block footer %}
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sua história em um Roteiro</font></font></span>
+      </div>
+    </footer>
 {% endblock %}

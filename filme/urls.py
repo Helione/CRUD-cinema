@@ -23,7 +23,7 @@ from home import urls as home_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('filme/', include(genero_urls)),
+    path('meusfilme/', include(genero_urls)),
     path('', include(home_urls)),
     path('login/', auth_views.LoginView.as_view(), name='login'),
 ]+ static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)

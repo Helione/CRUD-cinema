@@ -4,20 +4,38 @@
 
 {% block main %}
 <div class="row">
-    <div class="col-sm">
-
-    </div>
-    <div class="col-6">
+    <div class="col-md">
         <h2>Seja Bem Vindo</h2>
     </div>
-    <div class="col-sm">
-        {% if user.is_authenticated%}
-            <p> Ola {{ user.username }}</p>
-            <a href="{%url 'logout' %}" class="btn btn-danger">Sair</a>
+    <div class="col-md">
+        {% if user.is_authenticated %}
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                           <h1  class="navbar-brand">Olá {{ user.username }}</h1>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                 <a href="{% url 'filmes'%}" class="btn btn-outline-warning">página inicial</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="btn btn-outline-danger" href="{% url 'logout' %}">Sair</a>
+                            </li>
+                        </ul>
+                     </div>
+                </nav>
         {% else%}
             <a href="{% url 'login' %}" class="btn btn-warning">Entrar</a>
         {% endif%}
     </div>
   </div>
 
+{% endblock %}
+{% block footer %}
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sua história em um Roteiro</font></font></span>
+      </div>
+    </footer>
 {% endblock %}
