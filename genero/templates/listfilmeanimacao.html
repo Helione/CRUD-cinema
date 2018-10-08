@@ -30,7 +30,7 @@
                     {% for Animacao in filmesa%}
                         <li class="list-group-item">
                           <a href="{% url 'atualizar_animacao' Animacao.id%}">{{ Animacao.filme }}</a>
-                          <a href="{% url 'deletar_animacao' Animacao.id%}" class="trash-item">
+                          <a class="item" href="{% url 'deletar_animacao' Animacao.id%}">
                              <i class="fa fa-trash" aria-hidden="true"></i></a>
                         </li>
                     {% endfor %}

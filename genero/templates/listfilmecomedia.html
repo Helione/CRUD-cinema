@@ -30,7 +30,7 @@
             {% for Comedia in filmesc%}
                 <li class="list-group-item">
                     <a href="{% url 'atualizar_comedia' Comedia.id%}">{{ Comedia.filme }}</a>
-                    <a href="{% url 'deletar_comedia' Comedia.id%}" class="trash-item">
+                    <a class="item" href="{% url 'deletar_comedia' Comedia.id%}">
                         <i class="fa fa-trash" aria-hidden="true"></i></a>
                 </li>
             {% endfor %}

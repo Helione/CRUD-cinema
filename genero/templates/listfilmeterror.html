@@ -31,7 +31,7 @@
                 {% for Terror in filmest%}
                     <li class="list-group-item">
                       <a href="{% url 'atualizar_terror' Terror.id%}">{{ Terror.filme }}</a>
-                      <a href="{% url 'deletar_terror' Terror.id%}" class="trash-item">
+                      <a class="item" href="{% url 'deletar_terror' Terror.id%}">
                        <i class="fa fa-trash" aria-hidden="true"></i></a>
                     </li>
                {% endfor %}
